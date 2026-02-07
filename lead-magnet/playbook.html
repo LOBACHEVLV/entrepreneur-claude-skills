@@ -1,0 +1,1078 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The AI Founder's Playbook — Matt Warren</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  /* ========================================
+     PAGE SETUP (weasyprint)
+     ======================================== */
+  @page {
+    size: letter;
+    margin: 0.75in 0.9in;
+    background: #0a0a0f;
+    @bottom-center {
+      content: counter(page);
+      font-family: 'Inter', sans-serif;
+      font-size: 9pt;
+      color: #686888;
+    }
+  }
+  @page:first {
+    margin: 0;
+    @bottom-center { content: none; }
+  }
+
+  /* ========================================
+     RESET & BASE
+     ======================================== */
+  *, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    font-size: 16px;
+  }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: #0a0a0f;
+    color: #e8e8f0;
+    line-height: 1.7;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* ========================================
+     COVER PAGE
+     ======================================== */
+  .cover-page {
+    text-align: center;
+    padding: 200px 40px 80px;
+    page-break-after: always;
+  }
+
+  .cover-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #00d9ff;
+    margin-bottom: 32px;
+    display: inline-block;
+    padding: 6px 16px;
+    border: 1px solid #00d9ff55;
+    border-radius: 20px;
+  }
+
+  .cover-title {
+    font-size: 3.2rem;
+    font-weight: 900;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    margin-bottom: 24px;
+    color: #e8e8f0;
+  }
+
+  .cover-subtitle {
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: #9898b0;
+    line-height: 1.5;
+    max-width: 500px;
+    margin: 0 auto 48px;
+  }
+
+  .cover-accent {
+    color: #00d9ff;
+  }
+
+  .cover-author {
+    font-size: 0.95rem;
+    color: #686888;
+    margin-top: 16px;
+  }
+
+  .cover-author strong {
+    color: #e8e8f0;
+    font-weight: 600;
+  }
+
+  .cover-meta {
+    font-size: 0.8rem;
+    color: #686888;
+    margin-top: 40px;
+    letter-spacing: 0.05em;
+  }
+
+  .cover-line {
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(90deg, #00d9ff, #ff0080);
+    margin: 24px auto;
+    border-radius: 1px;
+  }
+
+  /* ========================================
+     TABLE OF CONTENTS
+     ======================================== */
+  .toc {
+    padding: 80px 0;
+  }
+
+  .toc h2 {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #00d9ff;
+    margin-bottom: 40px;
+  }
+
+  .toc-list {
+    list-style: none;
+  }
+
+  .toc-list li {
+    margin-bottom: 0;
+  }
+
+  .toc-list a {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    padding: 14px 0;
+    text-decoration: none;
+    color: #e8e8f0;
+    border-bottom: 1px solid #1e1e2e;
+  }
+
+  .toc-number {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #686888;
+    min-width: 24px;
+  }
+
+  .toc-title {
+    font-weight: 600;
+    font-size: 1.05rem;
+  }
+
+  .toc-desc {
+    font-size: 0.85rem;
+    color: #9898b0;
+    margin-left: auto;
+  }
+
+  /* ========================================
+     CHAPTER STYLING
+     ======================================== */
+  .chapter {
+    padding: 80px 0 60px;
+  }
+
+  .chapter-header {
+    margin-bottom: 48px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid #1e1e2e;
+  }
+
+  .chapter-number {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #00d9ff;
+    display: block;
+    margin-bottom: 12px;
+  }
+
+  .chapter-title {
+    font-size: 2rem;
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    color: #e8e8f0;
+    margin-bottom: 16px;
+  }
+
+  .chapter-meta {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 16px;
+  }
+
+  .skill-badge {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: #00d9ff;
+    background: #00d9ff20;
+    border: 1px solid #00d9ff40;
+    padding: 4px 12px;
+    border-radius: 4px;
+  }
+
+  .time-badge {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: #ff6b35;
+    background: #ff6b3520;
+    border: 1px solid #ff6b3540;
+    padding: 4px 12px;
+    border-radius: 4px;
+  }
+
+  /* ========================================
+     TYPOGRAPHY
+     ======================================== */
+  h2 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #e8e8f0;
+    margin-top: 48px;
+    margin-bottom: 20px;
+    letter-spacing: -0.02em;
+  }
+
+  h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-top: 40px;
+    margin-bottom: 12px;
+    color: #e8e8f0;
+  }
+
+  p {
+    margin-bottom: 16px;
+    color: #9898b0;
+  }
+
+  strong {
+    color: #e8e8f0;
+    font-weight: 600;
+  }
+
+  em {
+    font-style: italic;
+    color: #e8e8f0;
+  }
+
+  /* ========================================
+     LISTS
+     ======================================== */
+  ul, ol {
+    margin-bottom: 20px;
+    padding-left: 24px;
+  }
+
+  li {
+    margin-bottom: 8px;
+    color: #9898b0;
+    line-height: 1.6;
+  }
+
+  li strong {
+    color: #e8e8f0;
+  }
+
+  ol {
+    counter-reset: list-counter;
+    list-style: none;
+    padding-left: 0;
+  }
+
+  ol > li {
+    counter-increment: list-counter;
+    padding-left: 32px;
+    position: relative;
+  }
+
+  ol > li::before {
+    content: counter(list-counter);
+    position: absolute;
+    left: 0;
+    top: 2px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #00d9ff;
+    background: #00d9ff20;
+    width: 22px;
+    height: 22px;
+    border-radius: 4px;
+    text-align: center;
+    line-height: 22px;
+  }
+
+  /* ========================================
+     BLOCKQUOTES (AI Prompts)
+     ======================================== */
+  blockquote {
+    margin: 24px 0;
+    padding: 24px 24px 20px;
+    background: #12121a;
+    border-left: 3px solid #00d9ff;
+    border-radius: 0 8px 8px 0;
+  }
+
+  blockquote p {
+    color: #e8e8f0;
+    font-style: italic;
+    margin-bottom: 0;
+  }
+
+  /* ========================================
+     CODE BLOCKS
+     ======================================== */
+  code {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85em;
+    background: #161622;
+    color: #00d9ff;
+    padding: 2px 8px;
+    border-radius: 4px;
+  }
+
+  pre {
+    margin: 24px 0;
+    padding: 24px;
+    background: #161622;
+    border: 1px solid #1e1e2e;
+    border-radius: 8px;
+  }
+
+  pre code {
+    background: none;
+    padding: 0;
+    font-size: 0.85rem;
+    line-height: 1.6;
+    color: #9898b0;
+  }
+
+  /* ========================================
+     SPECIAL BOXES
+     ======================================== */
+  .tip-box {
+    margin: 24px 0;
+    padding: 20px 24px;
+    background: #12121a;
+    border: 1px solid #2a2a3e;
+    border-radius: 8px;
+  }
+
+  .tip-box .tip-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #ff6b35;
+    margin-bottom: 8px;
+    display: block;
+  }
+
+  .tip-box p {
+    margin-bottom: 0;
+  }
+
+  .checklist-box {
+    margin: 24px 0;
+    padding: 24px;
+    background: #12121a;
+    border: 1px solid #1e1e2e;
+    border-radius: 8px;
+  }
+
+  .checklist-box h4 {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #e8e8f0;
+    margin-bottom: 16px;
+  }
+
+  .checklist-box ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .checklist-box li {
+    padding: 6px 0 6px 28px;
+    position: relative;
+  }
+
+  .checklist-box li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 16px;
+    height: 16px;
+    border: 2px solid #2a2a3e;
+    border-radius: 3px;
+  }
+
+  /* ========================================
+     SECTION DIVIDER
+     ======================================== */
+  .divider {
+    height: 1px;
+    background: #2a2a3e;
+    margin: 60px 0;
+  }
+
+  /* ========================================
+     TIMELINE / WEEKEND OVERVIEW
+     ======================================== */
+  .timeline {
+    margin: 32px 0;
+  }
+
+  .timeline-item {
+    display: flex;
+    gap: 20px;
+    padding: 20px 0;
+    border-bottom: 1px solid #1e1e2e;
+  }
+
+  .timeline-item:last-child {
+    border-bottom: none;
+  }
+
+  .timeline-day {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #00d9ff;
+    min-width: 100px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding-top: 2px;
+  }
+
+  .timeline-content h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #e8e8f0;
+    margin-bottom: 4px;
+  }
+
+  .timeline-content p {
+    font-size: 0.9rem;
+    margin-bottom: 0;
+  }
+
+  /* ========================================
+     CLOSING / CTA
+     ======================================== */
+  .closing {
+    padding: 80px 0;
+    text-align: center;
+  }
+
+  .closing h2 {
+    font-size: 2rem;
+    margin-bottom: 24px;
+  }
+
+  .closing-list {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    max-width: 400px;
+    margin: 24px auto;
+  }
+
+  .closing-list li {
+    padding: 8px 0;
+    border-bottom: 1px solid #1e1e2e;
+  }
+
+  .closing-list li:last-child {
+    border-bottom: none;
+  }
+
+  .cta-box {
+    margin: 40px auto;
+    padding: 32px;
+    background: #12121a;
+    border: 1px solid #00d9ff40;
+    border-radius: 12px;
+    max-width: 500px;
+  }
+
+  .cta-box code {
+    display: block;
+    font-size: 0.9rem;
+    margin: 12px 0;
+    padding: 12px 16px;
+    background: #0a0a0f;
+    border-radius: 6px;
+  }
+
+  .cta-box p {
+    font-size: 0.9rem;
+  }
+
+  .cta-link {
+    display: inline-block;
+    margin-top: 8px;
+    color: #00d9ff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+  }
+
+  .author-sign {
+    margin-top: 48px;
+    font-size: 0.9rem;
+    color: #686888;
+    font-style: italic;
+  }
+
+  /* ========================================
+     PAGE FOOTER (screen only)
+     ======================================== */
+  .page-footer {
+    padding: 40px 0;
+    text-align: center;
+    font-size: 0.8rem;
+    color: #686888;
+    border-top: 1px solid #1e1e2e;
+  }
+
+  .page-footer a {
+    color: #00d9ff;
+    text-decoration: none;
+  }
+</style>
+</head>
+<body>
+
+<!-- ============================================
+     COVER PAGE
+     ============================================ -->
+<div class="cover-page">
+  <div class="cover-content">
+    <span class="cover-label">Free Playbook</span>
+    <h1 class="cover-title">The AI Founder's<br><span class="cover-accent">Playbook</span></h1>
+    <p class="cover-subtitle">How to launch a product in a weekend using Claude Code and 24 battle-tested AI skills.</p>
+    <div class="cover-line"></div>
+    <p class="cover-author">By <strong>Matt Warren</strong></p>
+    <p class="cover-meta">mattwarren.co &middot; github.com/mfwarren/entrepreneur-claude-skills</p>
+  </div>
+</div>
+
+<!-- ============================================
+     TABLE OF CONTENTS
+     ============================================ -->
+<div class="toc chapter">
+  <h2>Contents</h2>
+  <ul class="toc-list">
+    <li><a href="#intro"><span class="toc-number">00</span><span class="toc-title">Why This Playbook Exists</span></a></li>
+    <li><a href="#prereqs"><span class="toc-number">--</span><span class="toc-title">What You Need Before You Start</span></a></li>
+    <li><a href="#ch1"><span class="toc-number">01</span><span class="toc-title">Friday Night &mdash; Validate the Idea</span><span class="toc-desc">2 hrs</span></a></li>
+    <li><a href="#ch2"><span class="toc-number">02</span><span class="toc-title">Saturday Morning &mdash; Build the Offer</span><span class="toc-desc">3 hrs</span></a></li>
+    <li><a href="#ch3"><span class="toc-number">03</span><span class="toc-title">Saturday Afternoon &mdash; Ship the Landing Page</span><span class="toc-desc">3 hrs</span></a></li>
+    <li><a href="#ch4"><span class="toc-number">04</span><span class="toc-title">Saturday Evening &mdash; Wire the Email System</span><span class="toc-desc">2 hrs</span></a></li>
+    <li><a href="#ch5"><span class="toc-number">05</span><span class="toc-title">Sunday &mdash; Launch</span><span class="toc-desc">4 hrs</span></a></li>
+    <li><a href="#ch6"><span class="toc-number">06</span><span class="toc-title">Monday &mdash; Measure and Decide</span><span class="toc-desc">1 hr</span></a></li>
+    <li><a href="#closing"><span class="toc-number">--</span><span class="toc-title">The Bigger Picture</span></a></li>
+  </ul>
+</div>
+
+<!-- ============================================
+     INTRO
+     ============================================ -->
+<div class="chapter" id="intro">
+  <div class="chapter-header">
+    <span class="chapter-number">Introduction</span>
+    <h2 class="chapter-title">Why This Playbook Exists</h2>
+  </div>
+
+  <p>I run a CPG brand. I build software products. I do my own marketing. And for the past year, I've been doing all of it with AI.</p>
+
+  <p>Not the "ask ChatGPT to write a blog post" kind of AI. The kind where Claude Code is my co-founder for every sprint. Where a weekend of focused work replaces what used to take a team three weeks.</p>
+
+  <p>This playbook walks you through exactly how I'd launch a product from scratch in 48 hours using 24 open-source AI skills I built and use daily. Not theory. Not prompts. The actual workflow.</p>
+
+  <p>Here's the deal: the skills are free and open-source on GitHub. But knowing <em>how to chain them together</em> &mdash; that's what separates a founder who plays with AI from a founder who ships with AI.</p>
+
+  <p>Let's go.</p>
+
+  <div class="divider"></div>
+
+  <h3>The Weekend at a Glance</h3>
+
+  <div class="timeline">
+    <div class="timeline-item">
+      <span class="timeline-day">Fri Night</span>
+      <div class="timeline-content">
+        <h4>Validate the Idea</h4>
+        <p>Market research, competitive analysis, go/no-go decision.</p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <span class="timeline-day">Sat Morning</span>
+      <div class="timeline-content">
+        <h4>Build the Offer</h4>
+        <p>Value equation, pricing, naming, and packaging.</p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <span class="timeline-day">Sat Afternoon</span>
+      <div class="timeline-content">
+        <h4>Ship the Landing Page</h4>
+        <p>Page structure, copy, build, and deploy.</p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <span class="timeline-day">Sat Evening</span>
+      <div class="timeline-content">
+        <h4>Wire the Email System</h4>
+        <p>Welcome sequence and cold outreach automation.</p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <span class="timeline-day">Sunday</span>
+      <div class="timeline-content">
+        <h4>Launch</h4>
+        <p>Social content, ad copy, and distribution.</p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <span class="timeline-day">Monday</span>
+      <div class="timeline-content">
+        <h4>Measure and Decide</h4>
+        <p>Unit economics, scenario analysis, next-step decision.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================
+     PREREQUISITES
+     ============================================ -->
+<div class="chapter" id="prereqs">
+  <div class="chapter-header">
+    <span class="chapter-number">Before You Start</span>
+    <h2 class="chapter-title">What You Need</h2>
+  </div>
+
+  <div class="checklist-box">
+    <h4>Prerequisites</h4>
+    <ul>
+      <li><strong>Claude Code</strong> installed (or Cursor/Windsurf &mdash; the skills work with all of them)</li>
+      <li><strong>The skills repo</strong> installed: <code>npx skills add mfwarren/entrepreneur-claude-skills</code></li>
+      <li><strong>A product idea</strong> &mdash; even a rough one. We'll sharpen it in Chapter 1.</li>
+      <li><strong>A domain and hosting</strong> &mdash; for the landing page (or use Carrd/Framer to move fast)</li>
+      <li><strong>An email provider</strong> &mdash; Beehiiv, ConvertKit, or whatever you use</li>
+      <li><strong>48 hours</strong> of focused time</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ============================================
+     CHAPTER 1
+     ============================================ -->
+<div class="chapter" id="ch1">
+  <div class="chapter-header">
+    <span class="chapter-number">Chapter 01</span>
+    <h2 class="chapter-title">Friday Night &mdash; Validate the Idea</h2>
+    <div class="chapter-meta">
+      <span class="skill-badge">market-research</span>
+      <span class="skill-badge">competitive-analysis</span>
+      <span class="time-badge">2 hours</span>
+    </div>
+  </div>
+
+  <p>Most founders skip validation because it feels like busywork. "I'll just build it and see." That's a recipe for building something nobody wants.</p>
+
+  <p>With AI, validation doesn't have to be slow. Here's the move:</p>
+
+  <h3>Step 1: Market Research (45 minutes)</h3>
+
+  <p>Open Claude Code and tell it:</p>
+
+  <blockquote>
+    <p>"I want to launch [your product idea]. Run the market-research skill. Here's what I know: [dump everything you know about the market, the customer, the problem]."</p>
+  </blockquote>
+
+  <p>The market-research skill will walk you through:</p>
+
+  <ul>
+    <li>Defining the research question (what decision are you actually making?)</li>
+    <li>TAM/SAM/SOM sizing &mdash; you'll get a funnel from total market down to your realistic capture</li>
+    <li>Building an Ideal Customer Profile (ICP) with demographics, pain points, buying triggers, and objections</li>
+    <li>Identifying where your customers hang out online</li>
+  </ul>
+
+  <div class="tip-box">
+    <span class="tip-label">What you're looking for</span>
+    <p>Is this market big enough to be worth your time? Do you understand who the buyer is and what they care about?</p>
+  </div>
+
+  <h3>Step 2: Competitive Landscape (45 minutes)</h3>
+
+  <p>Now tell Claude Code:</p>
+
+  <blockquote>
+    <p>"Run the competitive-analysis skill for [your product] against these competitors: [list 3-5 you know about]."</p>
+  </blockquote>
+
+  <p>You'll get:</p>
+
+  <ul>
+    <li>A per-competitor breakdown of what they offer, how they price, and where they're weak</li>
+    <li>A SWOT analysis for your position</li>
+    <li>A positioning map showing where white space exists</li>
+    <li>A differentiation strategy based on real gaps</li>
+  </ul>
+
+  <div class="tip-box">
+    <span class="tip-label">What you're looking for</span>
+    <p>Is there a gap you can own? Are you different enough to matter?</p>
+  </div>
+
+  <h3>Step 3: Go/No-Go Decision (30 minutes)</h3>
+
+  <p>After these two sessions, you have enough to decide:</p>
+
+  <ul>
+    <li>Is the market real and reachable?</li>
+    <li>Is there a gap in the competitive landscape?</li>
+    <li>Do you have a clear ICP?</li>
+  </ul>
+
+  <p>If yes &mdash; you're building this weekend. If no &mdash; you just saved yourself weeks of wasted effort.</p>
+</div>
+
+<!-- ============================================
+     CHAPTER 2
+     ============================================ -->
+<div class="chapter" id="ch2">
+  <div class="chapter-header">
+    <span class="chapter-number">Chapter 02</span>
+    <h2 class="chapter-title">Saturday Morning &mdash; Build the Offer</h2>
+    <div class="chapter-meta">
+      <span class="skill-badge">offer-creation</span>
+      <span class="skill-badge">pricing-strategy</span>
+      <span class="time-badge">3 hours</span>
+    </div>
+  </div>
+
+  <p>You don't sell a product. You sell an offer. The difference: a product is what you make. An offer is the irresistible package that makes buying feel obvious.</p>
+
+  <h3>Step 1: The Value Equation (1 hour)</h3>
+
+  <p>Tell Claude Code:</p>
+
+  <blockquote>
+    <p>"Run the offer-creation skill. Here's my product: [description]. My customer's dream outcome is: [what they really want]. Their biggest fear about buying is: [objection]."</p>
+  </blockquote>
+
+  <p>The skill applies the Hormozi value equation:</p>
+
+  <pre><code>Value = (Dream Outcome x Likelihood of Achievement) /
+        (Time Delay x Effort Required)</code></pre>
+
+  <p>You'll work through all four levers to maximize perceived value. The output is a structured value stack &mdash; your core offer plus bonuses that make the price feel like a steal.</p>
+
+  <h3>Step 2: Price It (1 hour)</h3>
+
+  <blockquote>
+    <p>"Run the pricing-strategy skill. Here's my value stack: [paste from previous step]. My competitors charge: [range]. My target customer's budget is: [estimate]."</p>
+  </blockquote>
+
+  <p>You'll get:</p>
+
+  <ul>
+    <li>A recommended pricing model (value-based vs. tiered vs. usage)</li>
+    <li>A 3-tier structure (if applicable) with psychology tactics</li>
+    <li>Specific pricing recommendations with rationale</li>
+  </ul>
+
+  <h3>Step 3: Name and Package (1 hour)</h3>
+
+  <p>The offer-creation skill also produces a name and one-pager. By the end of this session you should have:</p>
+
+  <ul>
+    <li>An offer name that communicates the outcome</li>
+    <li>A complete value stack with prices</li>
+    <li>A guarantee that addresses the #1 objection</li>
+    <li>A one-pager you can hand to anyone and they understand what you're selling</li>
+  </ul>
+</div>
+
+<!-- ============================================
+     CHAPTER 3
+     ============================================ -->
+<div class="chapter" id="ch3">
+  <div class="chapter-header">
+    <span class="chapter-number">Chapter 03</span>
+    <h2 class="chapter-title">Saturday Afternoon &mdash; Ship the Landing Page</h2>
+    <div class="chapter-meta">
+      <span class="skill-badge">landing-pages</span>
+      <span class="skill-badge">copywriting</span>
+      <span class="time-badge">3 hours</span>
+    </div>
+  </div>
+
+  <p>This is where most people stall. "I need to design it." "I need to find the right template." "I need to write the copy." With the right skills loaded, Claude Code does all of this in one session.</p>
+
+  <h3>Step 1: Page Structure (30 minutes)</h3>
+
+  <blockquote>
+    <p>"Run the landing-pages skill. Here's my offer: [paste the one-pager from Chapter 2]. Traffic will come from [paid ads / social / organic]. The goal is [signups / purchases / demos]."</p>
+  </blockquote>
+
+  <p>You'll get a complete wireframe:</p>
+
+  <ol>
+    <li>Hero (headline + subheadline + CTA)</li>
+    <li>Problem section</li>
+    <li>Solution section</li>
+    <li>Social proof</li>
+    <li>How it works (3 steps)</li>
+    <li>Features/benefits</li>
+    <li>Pricing</li>
+    <li>FAQ (addresses your top objections)</li>
+    <li>Final CTA</li>
+    <li>Guarantee</li>
+  </ol>
+
+  <h3>Step 2: Write the Copy (1.5 hours)</h3>
+
+  <blockquote>
+    <p>"Run the copywriting skill for this landing page. Use PAS framework. Here are my proof points: [testimonials, stats, credentials]. Tone should be: [casual/professional/urgent]."</p>
+  </blockquote>
+
+  <p>The copywriting skill produces:</p>
+
+  <ul>
+    <li>3 headline variants (direct, story-driven, contrarian)</li>
+    <li>Full copy for every section</li>
+    <li>3 CTA variants</li>
+    <li>All written at a 6th-grade reading level with short paragraphs and benefit-led language</li>
+  </ul>
+
+  <h3>Step 3: Build and Ship (1 hour)</h3>
+
+  <p>Take the structured output and drop it into your page builder. Since every section is written and structured, this is assembly &mdash; not creation.</p>
+
+  <p>If you're using WordPress, ask Claude Code to convert the copy into Gutenberg blocks. If you're using Carrd, Framer, or Webflow &mdash; the section-by-section format maps directly to components.</p>
+
+  <div class="tip-box">
+    <span class="tip-label">Key principle</span>
+    <p><strong>Ship it. Don't perfect it.</strong> You can optimize after launch. A live page that's 80% perfect beats a draft that's 100% perfect.</p>
+  </div>
+</div>
+
+<!-- ============================================
+     CHAPTER 4
+     ============================================ -->
+<div class="chapter" id="ch4">
+  <div class="chapter-header">
+    <span class="chapter-number">Chapter 04</span>
+    <h2 class="chapter-title">Saturday Evening &mdash; Wire the Email System</h2>
+    <div class="chapter-meta">
+      <span class="skill-badge">email-campaigns</span>
+      <span class="skill-badge">cold-outreach</span>
+      <span class="time-badge">2 hours</span>
+    </div>
+  </div>
+
+  <p>Two email systems to build: one for people who sign up (welcome sequence) and one for people you want to reach directly (cold outreach).</p>
+
+  <h3>Step 1: Welcome Sequence (1 hour)</h3>
+
+  <blockquote>
+    <p>"Run the email-campaigns skill. Type: welcome sequence. Product: [your offer]. Goal: [purchase / activation / engagement]. Write 5 emails."</p>
+  </blockquote>
+
+  <p>You'll get:</p>
+
+  <ul>
+    <li>5 emails with subject lines, preview text, body copy, and CTAs</li>
+    <li>Timing recommendations (Day 0, Day 1, Day 3, Day 5, Day 7)</li>
+    <li>Each email has a single focus and single CTA</li>
+    <li>Segmentation suggestions based on behavior</li>
+  </ul>
+
+  <p>Load these into Beehiiv (or your ESP) as an automation. This runs forever once it's set up.</p>
+
+  <h3>Step 2: Cold Outreach (1 hour, optional)</h3>
+
+  <p>If you have a list of target prospects:</p>
+
+  <blockquote>
+    <p>"Run the cold-outreach skill. I'm reaching [title] at [company type]. The pain I solve: [problem]. Proof: [result I've achieved]. Write a 4-email sequence."</p>
+  </blockquote>
+
+  <p>You'll get:</p>
+
+  <ul>
+    <li>4 emails: Opener, Value Add, Case Study, Breakup</li>
+    <li>5 subject line variants per email</li>
+    <li>All under 100 words (cold emails should be short)</li>
+    <li>LinkedIn DM variants (if relevant)</li>
+  </ul>
+</div>
+
+<!-- ============================================
+     CHAPTER 5
+     ============================================ -->
+<div class="chapter" id="ch5">
+  <div class="chapter-header">
+    <span class="chapter-number">Chapter 05</span>
+    <h2 class="chapter-title">Sunday &mdash; Launch</h2>
+    <div class="chapter-meta">
+      <span class="skill-badge">social-media</span>
+      <span class="skill-badge">paid-ads</span>
+      <span class="time-badge">4 hours</span>
+    </div>
+  </div>
+
+  <p>Launch day. You've validated the idea, built the offer, shipped the page, and wired the emails. Now you need eyeballs.</p>
+
+  <h3>Step 1: Organic Social (2 hours)</h3>
+
+  <blockquote>
+    <p>"Run the social-media skill. I'm launching [product] today. Key selling point: [hook]. Target audience: [ICP]. Create content for Twitter/X and LinkedIn."</p>
+  </blockquote>
+
+  <p>For each platform you'll get 3 variants:</p>
+
+  <ul>
+    <li>Direct/educational</li>
+    <li>Story-driven/personal</li>
+    <li>Contrarian/provocative</li>
+  </ul>
+
+  <p>Post the strongest variant on each platform. Save the others for the next 2-3 days.</p>
+
+  <div class="tip-box">
+    <span class="tip-label">Twitter tip</span>
+    <p>The thread format works best for launches. Hook tweet, then problem, solution, what's included, and CTA with link.</p>
+  </div>
+
+  <div class="tip-box">
+    <span class="tip-label">LinkedIn tip</span>
+    <p>Open with one counterintuitive line that stops the scroll. Keep paragraphs to 1-2 sentences. Ask a question at the end.</p>
+  </div>
+
+  <h3>Step 2: Paid Ads (2 hours, optional)</h3>
+
+  <p>If you have ad budget:</p>
+
+  <blockquote>
+    <p>"Run the paid-ads skill. Platform: Meta. Objective: conversions. Product: [your offer]. Target: [audience]. Landing page: [URL]. Write 5 ad variants."</p>
+  </blockquote>
+
+  <p>You'll get:</p>
+
+  <ul>
+    <li>5 primary text variants for A/B testing</li>
+    <li>Headline and description options</li>
+    <li>A creative brief you can hand to a designer (or use for AI image generation)</li>
+    <li>A test matrix telling you what to test first</li>
+  </ul>
+
+  <p>Start with $20-50/day on 3 variants. Kill losers after 48 hours. Scale winners.</p>
+</div>
+
+<!-- ============================================
+     CHAPTER 6
+     ============================================ -->
+<div class="chapter" id="ch6">
+  <div class="chapter-header">
+    <span class="chapter-number">Chapter 06</span>
+    <h2 class="chapter-title">Monday &mdash; Measure and Decide</h2>
+    <div class="chapter-meta">
+      <span class="skill-badge">unit-economics</span>
+      <span class="skill-badge">decision-frameworks</span>
+      <span class="time-badge">1 hour</span>
+    </div>
+  </div>
+
+  <p>You've got data now. Time to figure out what's working.</p>
+
+  <h3>Step 1: Run the Numbers (30 minutes)</h3>
+
+  <blockquote>
+    <p>"Run the unit-economics skill. Here's what I know: [spend, signups, conversion rate, revenue, COGS]. Business model: [type]."</p>
+  </blockquote>
+
+  <p>You'll get:</p>
+
+  <ul>
+    <li>CAC, LTV, LTV:CAC ratio</li>
+    <li>Payback period</li>
+    <li>Contribution margin</li>
+    <li>Scenario analysis ("if you improve X by Y%, here's the impact")</li>
+    <li>Clear verdict: healthy, needs work, or unsustainable</li>
+  </ul>
+
+  <h3>Step 2: Decide What's Next (30 minutes)</h3>
+
+  <blockquote>
+    <p>"Run the decision-frameworks skill. Here's my situation: [describe where you are and what options you're considering]."</p>
+  </blockquote>
+
+  <p>The skill will classify your decision (Type 1 or Type 2), apply the right framework, and give you a recommendation with confidence level.</p>
+
+  <p>Common post-launch decisions:</p>
+
+  <ul>
+    <li>Double down on paid ads vs. go organic</li>
+    <li>Keep current offer vs. pivot positioning</li>
+    <li>Add features vs. focus on distribution</li>
+    <li>Keep building vs. shelve and move on</li>
+  </ul>
+</div>
+
+<!-- ============================================
+     CLOSING
+     ============================================ -->
+<div class="chapter closing" id="closing">
+  <h2>The Bigger Picture</h2>
+
+  <p>What you just did in a weekend used to require:</p>
+
+  <ul class="closing-list">
+    <li>A marketing consultant &mdash; <strong>$5-10K</strong></li>
+    <li>A copywriter &mdash; <strong>$2-5K</strong></li>
+    <li>A web designer &mdash; <strong>$3-8K</strong></li>
+    <li>3-4 weeks of calendar time</li>
+  </ul>
+
+  <p>You did it in 48 hours with AI skills that are free and open-source.</p>
+
+  <p>This isn't about replacing people. It's about moving fast enough to test ideas before committing serious resources. The ideas that survive the weekend test are the ones worth investing in.</p>
+
+  <div class="cta-box">
+    <p><strong>Get the Skills</strong></p>
+    <code>npx skills add mfwarren/entrepreneur-claude-skills</code>
+    <p style="margin-top: 16px;"><a class="cta-link" href="https://github.com/mfwarren/entrepreneur-claude-skills">github.com/mfwarren/entrepreneur-claude-skills</a></p>
+    <p style="margin-top: 8px;"><a class="cta-link" href="https://www.mattwarren.co/ai-founder-playbook/">mattwarren.co &mdash; Subscribe for new skills &amp; workflows</a></p>
+  </div>
+
+  <p class="author-sign">Built by Matt Warren &mdash; founder of Psychedelic Water, engineer, and the kind of person who builds his own tools because it's faster than waiting.</p>
+</div>
+
+</body>
+</html>

@@ -4,6 +4,8 @@ Production-ready skill packages for Claude Code and AI coding agents. The best-o
 
 **24 skills across 6 categories** | **Built for founders, by a founder** | **Works with Claude Code, Cursor, Windsurf, and more**
 
+> **Free Playbook:** [The AI Founder's Playbook](https://www.mattwarren.co/ai-founder-playbook/) — How to launch a product in a weekend using these skills. Step-by-step, idea to live product in 48 hours. [Get it free →](https://www.mattwarren.co/ai-founder-playbook/)
+
 ## Why This Exists
 
 Most AI skill collections are written by prompt engineers. These are written by someone who actually runs a CPG brand, builds software products, and does his own marketing with Claude Code every day. Every skill here solves a real problem I've faced as a founder.
@@ -162,8 +164,14 @@ See [CONTRIBUTING.md](docs/CONTRIBUTING.md) for guidelines on submitting skills.
 Built by [Matt Warren](https://mattwarren.co) — founder, engineer, and AI-first operator. I use Claude Code to run my business daily and these skills reflect real workflows, not theoretical prompts.
 
 - Blog: [mattwarren.co](https://mattwarren.co)
-- Twitter/X: [@maboroshi](https://twitter.com/maboroshi)
+- Twitter/X: [@matt_warren](https://x.com/matt_warren)
 - GitHub: [@mfwarren](https://github.com/mfwarren)
+
+## Stay Updated
+
+New skills, workflows, and founder-tested AI strategies — delivered weekly.
+
+**[Subscribe to the newsletter →](https://www.mattwarren.co/ai-founder-playbook/)**
 
 ## License
 
