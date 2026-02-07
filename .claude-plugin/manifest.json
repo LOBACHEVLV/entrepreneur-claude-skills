@@ -1,0 +1,186 @@
+{
+  "name": "entrepreneur-claude-skills",
+  "version": "1.0.0",
+  "description": "Production-ready entrepreneurship skills for Claude Code — marketing, sales, product, operations, finance, and leadership",
+  "author": "mfwarren",
+  "license": "MIT",
+  "homepage": "https://github.com/mfwarren/entrepreneur-claude-skills",
+  "categories": [
+    "marketing-growth",
+    "sales-revenue",
+    "product-strategy",
+    "operations",
+    "finance",
+    "leadership"
+  ],
+  "skills": [
+    {
+      "name": "copywriting",
+      "path": "skills/marketing-growth/copywriting/SKILL.md",
+      "category": "marketing-growth",
+      "version": "1.0.0",
+      "status": "production"
+    },
+    {
+      "name": "seo-content",
+      "path": "skills/marketing-growth/seo-content/SKILL.md",
+      "category": "marketing-growth",
+      "version": "1.0.0",
+      "status": "production"
+    },
+    {
+      "name": "email-campaigns",
+      "path": "skills/marketing-growth/email-campaigns/SKILL.md",
+      "category": "marketing-growth",
+      "version": "1.0.0",
+      "status": "production"
+    },
+    {
+      "name": "social-media",
+      "path": "skills/marketing-growth/social-media/SKILL.md",
+      "category": "marketing-growth",
+      "version": "1.0.0",
+      "status": "production"
+    },
+    {
+      "name": "paid-ads",
+      "path": "skills/marketing-growth/paid-ads/SKILL.md",
+      "category": "marketing-growth",
+      "version": "1.0.0",
+      "status": "production"
+    },
+    {
+      "name": "offer-creation",
+      "path": "skills/sales-revenue/offer-creation/SKILL.md",
+      "category": "sales-revenue",
+      "version": "1.0.0",
+      "status": "production"
+    },
+    {
+      "name": "cold-outreach",
+      "path": "skills/sales-revenue/cold-outreach/SKILL.md",
+      "category": "sales-revenue",
+      "version": "1.0.0",
+      "status": "production"
+    },
+    {
+      "name": "pricing-strategy",
+      "path": "skills/sales-revenue/pricing-strategy/SKILL.md",
+      "category": "sales-revenue",
+      "version": "1.0.0",
+      "status": "production"
+    },
+    {
+      "name": "objection-handling",
+      "path": "skills/sales-revenue/objection-handling/SKILL.md",
+      "category": "sales-revenue",
+      "version": "1.0.0",
+      "status": "production"
+    },
+    {
+      "name": "market-research",
+      "path": "skills/product-strategy/market-research/SKILL.md",
+      "category": "product-strategy",
+      "version": "1.0.0",
+      "status": "production"
+    },
+    {
+      "name": "competitive-analysis",
+      "path": "skills/product-strategy/competitive-analysis/SKILL.md",
+      "category": "product-strategy",
+      "version": "1.0.0",
+      "status": "production"
+    },
+    {
+      "name": "product-market-fit",
+      "path": "skills/product-strategy/product-market-fit/SKILL.md",
+      "category": "product-strategy",
+      "version": "1.0.0",
+      "status": "production"
+    },
+    {
+      "name": "landing-pages",
+      "path": "skills/product-strategy/landing-pages/SKILL.md",
+      "category": "product-strategy",
+      "version": "1.0.0",
+      "status": "production"
+    },
+    {
+      "name": "sop-builder",
+      "path": "skills/operations/sop-builder/SKILL.md",
+      "category": "operations",
+      "version": "1.0.0",
+      "status": "production"
+    },
+    {
+      "name": "hiring-playbook",
+      "path": "skills/operations/hiring-playbook/SKILL.md",
+      "category": "operations",
+      "version": "1.0.0",
+      "status": "production"
+    },
+    {
+      "name": "automation-workflows",
+      "path": "skills/operations/automation-workflows/SKILL.md",
+      "category": "operations",
+      "version": "1.0.0",
+      "status": "production"
+    },
+    {
+      "name": "delegation-framework",
+      "path": "skills/operations/delegation-framework/SKILL.md",
+      "category": "operations",
+      "version": "1.0.0",
+      "status": "production"
+    },
+    {
+      "name": "financial-modeling",
+      "path": "skills/finance/financial-modeling/SKILL.md",
+      "category": "finance",
+      "version": "1.0.0",
+      "status": "production"
+    },
+    {
+      "name": "pitch-deck",
+      "path": "skills/finance/pitch-deck/SKILL.md",
+      "category": "finance",
+      "version": "1.0.0",
+      "status": "production"
+    },
+    {
+      "name": "unit-economics",
+      "path": "skills/finance/unit-economics/SKILL.md",
+      "category": "finance",
+      "version": "1.0.0",
+      "status": "production"
+    },
+    {
+      "name": "fundraising",
+      "path": "skills/finance/fundraising/SKILL.md",
+      "category": "finance",
+      "version": "1.0.0",
+      "status": "production"
+    },
+    {
+      "name": "decision-frameworks",
+      "path": "skills/leadership/decision-frameworks/SKILL.md",
+      "category": "leadership",
+      "version": "1.0.0",
+      "status": "production"
+    },
+    {
+      "name": "founder-productivity",
+      "path": "skills/leadership/founder-productivity/SKILL.md",
+      "category": "leadership",
+      "version": "1.0.0",
+      "status": "production"
+    },
+    {
+      "name": "team-building",
+      "path": "skills/leadership/team-building/SKILL.md",
+      "category": "leadership",
+      "version": "1.0.0",
+      "status": "production"
+    }
+  ]
+}
